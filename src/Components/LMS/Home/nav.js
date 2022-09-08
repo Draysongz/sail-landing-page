@@ -1,22 +1,22 @@
 export const navbar = [
     {
         title: 'Home',
-        url: '#',
+        url: '/',
         navclass:'navlinks'
     },
     {
         title: 'Tutors',
-        url: '#',
+        url: '/tutor',
         navclass:'navlinks'
     },
     {
         title: 'Student',
-        url: '#',
+        url: '/login',
         navclass:'navlinks'
     },
     {
         title: 'About',
-        url: '#',
+        url: '/about',
         navclass:'navlinks'
     },
 ]

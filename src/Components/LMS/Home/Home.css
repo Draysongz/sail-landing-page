@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 body{
-    background-image:url(../Utilities/gg.jpg);
+    background:url(../Utilities/gg.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 100vh;
 }
 ul {
     display: flex;
@@ -24,6 +25,7 @@ li{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
     color: #4383FF;
+    cursor: pointer;
     
 }
 .main-header{
@@ -43,8 +45,8 @@ color: #FF389A;
 .hero-text{
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 16px;
     line-height: 150%;
     color: #45494E;
     margin-top: -5%;
@@ -64,6 +66,7 @@ line-height: 19px;
 border: 1px solid #4E98EF;
 color: white;
 margin-left: 1%;
+cursor: pointer;
 }
 .vector{
     position: absolute;
