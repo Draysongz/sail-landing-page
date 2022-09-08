@@ -35,14 +35,14 @@ const onChange = (e)=>{
       </p>
     </header>
     <main>
-      <form action="">
+      <form action="" >
     
         <input type="email" className="email" 
-        placeholder='email' id='email' value={email} onChange={onChange} />
+        placeholder='email' id='email' value={email} onChange={onChange} autoComplete='off' />
 
         <div className="passwordInput">
           <input type={showPassword? 'text' : 'password'} className='passwordInput'
-          placeholder='password' id='password' value={password} onChange={onChange} />
+          placeholder='password' id='password' value={password} onChange={onChange} autoComplete='off' />
           <img src="e" alt="showPassword" className="showPassword"
            onClick={()=>setShowPassword((prevState)=> !prevState)} />
         </div>

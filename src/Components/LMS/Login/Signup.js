@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
+
 
 
 
@@ -28,6 +30,27 @@ const onChange = (e)=>{
     lastname:e.currentTarget.value,
   }))
 }
+
+const onSubmit = async (e)=>{
+  e.preventDefault()
+
+  try {
+    const auth = getAuth()
+    
+    const userCredential = await createUserWithEmailAndPassword(
+      auth, email, password
+    )
+    const user= userCredential.user
+
+    updateProfile(auth.currentUser,{
+      displayName: firstname
+    })
+    navigate('/')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
   return (
   <>
   <div className="pageContainer">
@@ -37,7 +60,7 @@ const onChange = (e)=>{
       </p>
     </header>
     <main>
-      <form action="">
+      <form action="" onSubmit={onSubmit}>
       <input type="text" className="firstname" 
         placeholder='firstname' id='firstname' value={firstname} onChange={onChange} />
 

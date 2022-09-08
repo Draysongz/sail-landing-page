@@ -12,7 +12,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   const redirect = ()=>{
-    navigate('/student')
+    navigate('/login')
   }
   return (
     <div className='Home-container'>
