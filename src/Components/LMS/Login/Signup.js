@@ -4,15 +4,16 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 
-const Signin = () => {
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false)
 
   const [formData, setFormData] =useState({
-
+    firstname: '',
+    lastname: '',
     email: '',
     password: '',
   })
-  const {email, password} =formData
+  const { firstname, lastname, email, password} =formData
 
 const navigate= useNavigate()
 
@@ -23,7 +24,8 @@ const onChange = (e)=>{
     ...prevState,
     email:e.currentTarget.value,
     password: e.currentTarget.value,
-    
+    firstname: e.currentTarget.value,
+    lastname:e.currentTarget.value,
   }))
 }
   return (
@@ -36,7 +38,13 @@ const onChange = (e)=>{
     </header>
     <main>
       <form action="">
-    
+      <input type="text" className="firstname" 
+        placeholder='firstname' id='firstname' value={firstname} onChange={onChange} />
+
+        <div className="passwordInput">
+        <input type="text" className="lastname" 
+        placeholder='lastname' id='lastname' value={lastname} onChange={onChange} />
+        </div>
         <input type="email" className="email" 
         placeholder='email' id='email' value={email} onChange={onChange} />
 
@@ -50,19 +58,19 @@ const onChange = (e)=>{
           Forgot Password
         </Link>
 
-        <div className="signInBar">
-          <p className="signInText">
-            Sign In
+        <div className="signUpBar">
+          <p className="signUpText">
+            Sign Up
           </p>
-          <button className="signInButton">
+          <button className="signUpButton">
 
           </button>
         </div>
       </form>
       {/* Google Oauth */}
 
-      <Link to='/register' className='registerLink'>
-        Sign Up
+      <Link to='/login' className='signInLink'>
+        Sign In
       </Link>
     </main>
   </div>
@@ -71,6 +79,6 @@ const onChange = (e)=>{
   )
 }
 
-export default Signin
+export default SignUp
 
 
